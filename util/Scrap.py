@@ -9,6 +9,7 @@ class Scrap(metaclass=ABCMeta):
         self._load()
         self._parse()
         self._process()
+        self._dispose()
 
     def _getPage(self, url):
         body = self._session.get(url)
@@ -24,4 +25,7 @@ class Scrap(metaclass=ABCMeta):
         pass
 
     def _process(self):
+        pass
+
+    def _dispose(self):
         pass

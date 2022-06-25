@@ -1,4 +1,7 @@
 import sys
+import requests
+from selenium import webdriver
+from golfpro import GolfProScrap
 from golf import GolfScrap
 from util import Config
 
@@ -19,7 +22,9 @@ class ScrapFactory:
             print (groups)
             return None
 
-        if site == GolfScrap.name: return GolfScrap()
+        if site == GolfScrap.name: return GolfScrap(requests.Session())
+        if site == GolfProScrap.name: 
+            return GolfProScrap(webdriver.Chrome())
 
 if __name__ == '__main__':
     config = Config('.config')
