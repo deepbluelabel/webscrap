@@ -1,4 +1,4 @@
-from util import KowanasTime
+from kowanas_util_python import KowanasTime
 
 class GolfReservation:
     def __init__(self, date, status):

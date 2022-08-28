@@ -1,9 +1,13 @@
 import sys
+sys.path.append('/Library/Python/local-packages')
 import requests
+import time
 from selenium import webdriver
 from golfpro import GolfProScrap
 from golf import GolfScrap
-from util import Config
+from kowanas_util_python import Config
+import chromedriver_autoinstaller as chromedriver
+chromedriver.install()
 
 class ScrapFactory:
     @classmethod
@@ -30,4 +34,7 @@ if __name__ == '__main__':
     config = Config('.config')
     scrap = ScrapFactory.create(sys.argv)
     if scrap == None: sys.exit()
-    scrap.run()
+    while True:
+        if scrap.found == False:
+            scrap.run()
+        time.sleep(10)

@@ -1,7 +1,7 @@
 import requests
 
-from util import Scrap, Config, KowanasTime, Action
-from util.notification import TelegramNotification
+from kowanas_util_python import Scrap, Config, KowanasTime, Action
+from kowanas_util_python.notification import TelegramNotification
 from datetime import datetime as dt
 from .GolfReservation import GolfReservation
 
