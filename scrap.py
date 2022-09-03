@@ -34,7 +34,7 @@ if __name__ == '__main__':
     config = Config('.config')
     scrap = ScrapFactory.create(sys.argv)
     if scrap == None: sys.exit()
-    while True:
-        if scrap.found == False:
-            scrap.run()
-        time.sleep(10)
+#    while True:
+    if scrap.found == False:
+        scrap.run()
+    time.sleep(10)

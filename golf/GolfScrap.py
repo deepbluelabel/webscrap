@@ -14,6 +14,8 @@ class GolfScrap(Scrap):
         self._loginUrl = config.get('login_url', group=self.name)
         self._id = config.get('id', group=self.name)
         self._password = config.get('password', group=self.name)
+        self._wantDay = config.get('day', group=self.name)
+        self._wantTime = int(config.get('time', group=self.name))
         self._thePage = None
         self._reservations = {}
         self._action = Action(TelegramNotification())
