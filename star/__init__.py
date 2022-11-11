@@ -1,0 +1,1 @@
+from .StarScrap import StarScrap

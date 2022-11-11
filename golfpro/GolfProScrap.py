@@ -99,6 +99,7 @@ class GolfProScrap(GolfScrap):
         else: 
             print (f'no day to select you want {self._wantDay} day')
             return
+        return
 
         time.sleep(1)
         reserves = self._session.find_elements(By.TAG_NAME, 'a')
