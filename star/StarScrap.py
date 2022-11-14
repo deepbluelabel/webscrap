@@ -23,43 +23,48 @@ class StarScrap(Scrap):
         self._password = config.get('password', group=self.name)
         self.__first = False
         self.__targets = [
-#          ['SFO', 'BKK', dt(2023, 2, 13), 7],
-#          ['LAX', 'BKK', dt(2023, 2, 13), 7],
-#          ['SFO', 'SIN', dt(2023, 2, 13), 7],
-#          ['LAX', 'SIN', dt(2023, 2, 13), 7],
-#          ['SFO', 'ICN', dt(2023, 2, 21), 7],
-#          ['LAX', 'ICN', dt(2023, 2, 21), 7],
-#          ['ICN', 'BKK', dt(2023, 2, 3), 7],
-#          ['ICN', 'SIN', dt(2023, 2, 3), 7],
+          ['SFO', 'BKK', dt(2023, 2, 13), 7],
+          ['LAX', 'BKK', dt(2023, 2, 13), 7],
+          ['SFO', 'SIN', dt(2023, 2, 13), 7],
+          ['LAX', 'SIN', dt(2023, 2, 13), 7],
+          ['SFO', 'ICN', dt(2023, 2, 21), 7],
+          ['LAX', 'ICN', dt(2023, 2, 21), 7],
+          ['ICN', 'BKK', dt(2023, 2, 3), 7],
+          ['ICN', 'SIN', dt(2023, 2, 3), 7],
           ['BKK', 'ICN', dt(2023, 2, 21), 7],
           ['SIN', 'ICN', dt(2023, 2, 21), 7],
-#          ['ICN', 'DPS', dt(2023, 2, 3), 7],
-#          ['ICN', 'MLE', dt(2023, 2, 3), 7],
-#          ['ICN', 'SFO', dt(2023, 2, 3), 7],
-#          ['ICN', 'LAX', dt(2023, 2, 3), 7],
+          ['ICN', 'DPS', dt(2023, 2, 3), 7],
+          ['ICN', 'MLE', dt(2023, 2, 3), 7],
+          ['ICN', 'SFO', dt(2023, 2, 3), 7],
+          ['ICN', 'CDG', dt(2023, 2, 3), 7],
+          ['ICN', 'FRA', dt(2023, 2, 3), 7],
+          ['ICN', 'FCO', dt(2023, 2, 3), 7],
+          ['ICN', 'LHR', dt(2023, 2, 3), 7],
+          ['ICN', 'SYD', dt(2023, 2, 3), 7],
 #          ['HND', 'SFO', dt(2023, 2, 5), 7],
 #          ['HND', 'LAX', dt(2023, 2, 5), 7],
 #          ['NRT', 'SFO', dt(2023, 2, 5), 7],
 #          ['NRT', 'LAX', dt(2023, 2, 5), 7],
-#          ['ICN', 'BKK', dt(2022, 11, 25), 7],
-#          ['ICN', 'SIN', dt(2022, 11, 25), 7],
-#          ['ICN', 'DPS', dt(2022, 11, 25), 7],
-#          ['ICN', 'MLE', dt(2022, 11, 25), 7],
-#          ['ICN', 'SFO', dt(2022, 11, 25), 7],
-#          ['ICN', 'LAX', dt(2022, 11, 25), 7],
+          ['ICN', 'BKK', dt(2022, 11, 25), 7],
+          ['ICN', 'SIN', dt(2022, 11, 25), 7],
+          ['ICN', 'DPS', dt(2022, 11, 25), 7],
+          ['ICN', 'MLE', dt(2022, 11, 25), 7],
+          ['ICN', 'SFO', dt(2022, 11, 25), 7],
+          ['ICN', 'LAX', dt(2022, 11, 25), 7],
 #          ['HND', 'SFO', dt(2022, 11, 27), 7],
 #          ['HND', 'LAX', dt(2022, 11, 27), 7],
 #          ['NRT', 'SFO', dt(2022, 11, 27), 7],
 #          ['NRT', 'LAX', dt(2022, 11, 27), 7],
-#          ['SFO', 'BKK', dt(2022, 12, 5), 7],
-#          ['LAX', 'BKK', dt(2022, 12, 5), 7],
-#          ['SFO', 'SIN', dt(2022, 12, 5), 7],
-#          ['LAX', 'SIN', dt(2022, 12, 5), 7],
-#          ['SFO', 'ICN', dt(2022, 12, 13), 7],
-#          ['LAX', 'ICN', dt(2022, 12, 13), 7],
+          ['SFO', 'BKK', dt(2022, 12, 5), 7],
+          ['LAX', 'BKK', dt(2022, 12, 5), 7],
+          ['SFO', 'SIN', dt(2022, 12, 5), 7],
+          ['LAX', 'SIN', dt(2022, 12, 5), 7],
+          ['SFO', 'ICN', dt(2022, 12, 13), 7],
+          ['LAX', 'ICN', dt(2022, 12, 13), 7],
         ]
+#        self.__seat = 'first'
         self.__seat = 'business'
-        self.__number = '2'
+        self.__number = '4'
         self._action = Action(TelegramNotification())
 
     def _load(self):
@@ -202,6 +207,7 @@ class StarScrap(Scrap):
         adultCount.click()
         time.sleep(2)
         adultCount.send_keys(Keys.BACKSPACE)
+        adultCount.send_keys(Keys.DELETE)
         adultCount.send_keys(self.__number)
         time.sleep(3)
 #        plusButton = self._session.find_element(By.CLASS_NAME, 'btn_number plus')

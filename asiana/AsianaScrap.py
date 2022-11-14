@@ -26,7 +26,7 @@ class AsianaScrap(Scrap):
         self.__rmonths = ['2023.02', '2022.12']
         self.__rdays = ['2023-2-21', '2022-12-21']
         self.__seat = 'business'
-        self.__number = '2'
+        self.__number = '4'
         self._action = Action(TelegramNotification())
 
     def _load(self):
@@ -112,6 +112,7 @@ class AsianaScrap(Scrap):
         adultCount.click()
         time.sleep(2)
         adultCount.send_keys(Keys.BACKSPACE)
+        adultCount.send_keys(Keys.DELETE)
         adultCount.send_keys(self.__number)
         time.sleep(3)
 #        plusButton = self._session.find_element(By.CLASS_NAME, 'btn_number plus')
