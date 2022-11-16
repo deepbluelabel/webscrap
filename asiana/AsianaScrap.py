@@ -11,6 +11,11 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 from bs4 import BeautifulSoup as bs
 
+#[telegram]
+#accesstoken=5441323831:AAFOo1VN3mt5ldZetkMz7Gb4J76n8zqi4rM
+#users=2069616049,15718520
+
+
 class AsianaScrap(Scrap):
     name = 'asiana'
     def __init__(self, session):
